@@ -15,7 +15,7 @@ namespace GigHub.Models
         public ApplicationUser Attendee { get; set; }
         [Key]
         [Column(Order =1)]
-        public int GigsId { get; set; }
+        public int GigId { get; set; }
         public Gig Gig { get; set; }
     }
 }

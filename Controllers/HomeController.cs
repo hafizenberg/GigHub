@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using GigHub.ViewModels;
 
 namespace GigHub.Controllers
 {
@@ -21,7 +22,12 @@ namespace GigHub.Controllers
                 .Include(g => g.Artist)
                 .Include(g=>g.Genre)
                 .Where(g => g.DateTime > DateTime.Now);
-            return View(upcomingGigs);
+            var ViewModel = new GigsViewModel
+            {
+                UpcomigGigs = upcomingGigs,
+                ShowActions = User.Identity.IsAuthenticated
+            };
+            return View(ViewModel);
         }
 
         public ActionResult About()

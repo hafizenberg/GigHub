@@ -36,6 +36,9 @@ span.field-validation-error{
 .navbar-inverse .navbar-brand {
         color: #fff;
 }
+.btn {
+    border-radius: 9px;
+}
 .gigs{
     list-style:none;
 }
